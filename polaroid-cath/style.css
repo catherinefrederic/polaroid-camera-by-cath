@@ -1,0 +1,308 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #04a5b2;
+    overflow: hidden;
+  }
+  
+  .polaroid-camera {
+    position: relative;
+    top:-50px;
+  }
+  .polaroid-camera:before, .polaroid-camera:after {
+    content:"";
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left:0;
+    top:50%;
+    background-color: #faedcd;
+    width:300px;
+  }
+  
+  .polaroid-camera:before {
+    border-radius: 30px 30px 0 0;
+    box-shadow: inset 0 45px #fefae0;
+    height:150px;
+  }
+  
+  .polaroid-camera:after {
+    height:40px;
+    top:-10px;
+  }
+  
+  button {
+    position: absolute;
+    width:50px;
+    height:20px;
+    transition: .2s;
+    border-radius: 10px 10px 0 0;
+    background-color: #003049;
+    border: none;
+    top:-95px;
+    left:50px;
+    transform-origin: bottom;
+    cursor: pointer;
+    z-index:125;
+  }
+  
+  button:active {
+    transform: scaleY(.5);
+  }
+  
+  .lens {
+    position: absolute;
+    border-radius:50%;
+    border:5px solid #333;
+    background-color: white;
+    width:115px;
+    height:115px;
+    z-index:1;
+    transform: translate(-50%,-50%);
+    top:50%;
+    left:0;
+  }
+  
+  .lens:before, .lens:after {
+    content:"";
+    position: absolute;
+    border-radius:50%;
+    transform: translate(-50%,-50%);
+    top:50%;
+    left:50%;
+  }
+  
+  .lens:before {
+    border: 10px solid #333;
+    width:90px;
+    height:90px;
+    background-color: #006494;
+  }
+  
+  .lens:after {
+    border:10px solid #0582ca;
+    width: 40px;
+    height:40px;
+    background-color: #003554;
+  }
+  
+  .reflection, .reflection:before, .reflection:after {
+    position: absolute;
+    border-radius:50%;
+  }
+  
+  .reflection {
+    background-color: rgba(255,255,255,.8);
+    width: 15px;
+    height:15px;
+    top:50px;
+    left:60px;
+    z-index:2;
+  }
+  
+  .reflection:before {
+    content:"";
+    width:115px;
+    height:115px;
+    background-color: rgba(255,255,255,.1);
+    top:-50px;
+    left:-60px;
+  }
+  
+  .reflection:after {
+    content:"";
+    width:20px;
+    height:20px;
+    background-color: rgba(255,255,255,.4);
+    top:35px;
+    left:-30px;
+    box-shadow: 40px -73px rgba(255,255,255,.4);
+  }
+  
+  .flash {
+    position: absolute;
+    width:40px;
+    height:40px;
+    background-color: #333;
+    border-radius: 5px;
+    z-index:4;
+    left:85px;
+    top:-40px;
+  }
+  
+  .flash:before, .flash:after {
+    content:"";
+    position: absolute;
+    border-radius:50%;
+    transform: translate(-50%,-50%);
+    top:50%;
+    left:50%;
+  }
+  
+  .flash:before {
+    border: 5px solid #006494;
+    width:20px;
+    height:20px;
+    background-color: #0582ca;
+  }
+  
+  .flash:after {
+    background-color: #003554;
+    width:8px;
+    height:8px;
+    box-shadow: 8px -5px rgba(255,255,255,.3);
+  }
+  
+  .stripes {
+    position: absolute;
+    width:14.5px;
+    height:20px;
+    background-color: #e02846;
+    top:55px;
+    box-shadow: -14.5px 0 #568760;
+  }
+  
+  .stripes:before, .stripes:after {
+    content:"";
+    position: absolute;
+    border-radius: 50%;
+  }
+  
+  .stripes:before {
+    width: 30px;
+    height:30px;
+    background-color: #333;
+    left:50px;
+    top:-20px;
+  }
+  
+  .stripes:after {
+    border:5px solid #ba181b;
+    background-color: #a4161a;
+    left:-130px;
+    top:-40px;
+    width: 30px;
+    height: 30px;
+  }
+  
+  .bottom {
+    position: absolute;
+    perspective: 250px;
+    z-index:10;
+  }
+  
+  .bottom:before, .bottom:after {
+    content:"";
+    position: absolute;
+    height:30px;
+    transform: rotateX(45deg);
+    top:73px;
+  }
+  
+  .bottom:before {
+    background-color: #e0d0a6;
+    width:314px;
+    left:-157px;
+  }
+  
+  .bottom:after {
+    width: 15px;
+    background-color: #a71e34;
+    box-shadow: -15px 0 #3a5a40;
+  }
+  
+  .bottom-front {
+    position: absolute;
+    background-color: #ebd9ae;
+    width:328px;
+    height:15px;
+    top:102px;
+    left:-164px;
+  }
+  
+  .bottom-front:before {
+    content:"";
+    position: absolute;
+    width: 15.5px;
+    height: 15px;
+    left:164px;
+    background-color: #e02846;
+    box-shadow: -15.5px 0 #568760;
+  }
+  
+  .bottom-front:after {
+    content:"";
+    position: absolute;
+    width:328px;
+    height:50px;
+    border-radius:0 0 20px 20px;
+    background-color: #540b0e;
+    top:15px;
+  }
+  
+  .slot {
+    position: absolute;
+    background-color: #220901;
+    width: 270px;
+    transform: translate(-50%,-50%);
+    border-radius: 10px 10px 0 0;
+    height:15px;
+    z-index:11;
+    top:159px;
+  }
+  
+  .shadow {
+    position: absolute;
+    width: 400px;
+    height:70px;
+    background-color: rgba(0,0,0,.3);
+    border-radius:50%;
+    top:120px;
+    left:-200px;
+    z-index:-4;
+  }
+  .photo {
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    top: 50px;
+    position: absolute;
+    border-style: solid;
+    border-color: white;
+    width: 170px;
+    height: 160px;
+    border-top-width: 10px;
+    border-bottom-width: 35px;
+    border-left-width: 10px;
+    border-right-width: 10px;
+    background-image: url('cathoely-polaroid.jpg');
+    background-size: cover;
+    overflow: hidden;
+}
+
+  
+  
+  
+  .flash-animation {
+    animation: flash-animation .2s ease;
+  }
+  
+  #circle {
+    position: absolute;
+    background-color: rgba(255,255,255,.4);
+    width: 100px;
+    height:100px;
+    border-radius:100%;
+    z-index:5;
+    top:-70px;
+    left:55px;
+    opacity:0;
+  }
+  @keyframes eject-photo {
+    0% {transform: translateY(0);left:-95px;}
+    100% {transform: translateY(115px); left:-95px;}
+  }
+  
+  .eject-photo {
+    animation: eject-photo .6s ease forwards .3s;
+  }
